@@ -1,0 +1,58 @@
+---
+
+---
+
+<!-- Hero Carrusel (solo Tailwind) -->
+<section class="relative h-[600px] overflow-hidden">
+  <!-- Radio Buttons como control -->
+  <input type="radio" name="carousel" id="slide1" class="peer/slide1 hidden" checked />
+  <input type="radio" name="carousel" id="slide2" class="peer/slide2 hidden" />
+  <input type="radio" name="carousel" id="slide3" class="peer/slide3 hidden" />
+
+  <!-- Slides -->
+  <div class="absolute inset-0 transition-opacity duration-700 ease-in-out peer-checked/slide1:opacity-100 opacity-0 z-10 bg-cover bg-center"
+    style="background-image: url('./img/hero1.jpg');">
+    <div class="bg-blue-900/60 h-full flex items-center justify-center">
+      <div class="text-center text-white px-6 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-4">Bienvenido a VALDISER</h1>
+        <p class="text-lg mb-6">Tu aliado en la gestión de residuos industriales y comerciales.</p>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded">
+          Solicitar Cotización
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 transition-opacity duration-700 ease-in-out peer-checked/slide2:opacity-100 opacity-0 z-10 bg-cover bg-center"
+    style="background-image: url('./img/hero2.jpg');">
+    <div class="bg-blue-900/60 h-full flex items-center justify-center">
+      <div class="text-center text-white px-6 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-4">Compromiso y Calidad</h1>
+        <p class="text-lg mb-6">Realizamos nuestros proyectos con profesionalismo y eficiencia.</p>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded">
+          Conoce Más
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-0 transition-opacity duration-700 ease-in-out peer-checked/slide3:opacity-100 opacity-0 z-10 bg-cover bg-center"
+    style="background-image: url('./img/hero3.jpg');">
+    <div class="bg-blue-900/60 h-full flex items-center justify-center">
+      <div class="text-center text-white px-6 max-w-3xl">
+        <h1 class="text-4xl font-bold mb-4">Soluciones Integrales</h1>
+        <p class="text-lg mb-6">Expertos en drywall, electricidad, estructuras metálicas y más.</p>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded">
+          Ver Servicios
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controles del carrusel -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+    <label for="slide1" class="w-4 h-4 bg-white rounded-full cursor-pointer opacity-70 hover:opacity-100 transition peer-checked/slide1:bg-blue-700"></label>
+    <label for="slide2" class="w-4 h-4 bg-white rounded-full cursor-pointer opacity-70 hover:opacity-100 transition peer-checked/slide2:bg-blue-700"></label>
+    <label for="slide3" class="w-4 h-4 bg-white rounded-full cursor-pointer opacity-70 hover:opacity-100 transition peer-checked/slide3:bg-blue-700"></label>
+  </div>
+</section>

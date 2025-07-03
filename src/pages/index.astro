@@ -1,0 +1,33 @@
+---
+import Banner from "../components/Banner.astro";
+import Beneficios from "../components/Beneficios.astro";
+import Contacto from "../components/Contacto.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Nosotros from "../components/Nosotros.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Bienvenido a la web de Valdiser.">
+	<main>
+		<Header />
+		<Banner />
+		<!-- Sección de Nosotros -->
+		<Nosotros />
+		<!--seccion beneficios -->
+		<Beneficios />
+		<!-- Sección de Contacto -->
+		<Contacto />
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0;
+		padding: 0;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>
