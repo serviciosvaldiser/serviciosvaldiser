@@ -5,6 +5,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://serviciosvaldiser.github.io',
+  base: 'serviciosvaldiser.github.io',
   devToolbar: {
     enabled: false
   },
