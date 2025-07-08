@@ -1,73 +1,100 @@
----
----
+<!-- Sección de Contacto Mejorada -->
+<section class="bg-gradient-to-br from-blue-700 to-blue-950 py-24 px-4 sm:px-8 lg:px-12" id="contacto">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-<!-- Sección de Contacto -->
-<section class="bg-white py-20 px-6" id="contacto">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
-    <!-- Formulario de contacto -->
+    <!-- Formulario -->
     <div>
-      <h2 class="text-4xl font-bold text-blue-900 mb-4">Contáctanos</h2>
-      <p class="text-gray-600 mb-8 text-base">
-        ¿Tienes un proyecto en mente? Escríbenos y te responderemos lo antes posible.
+      <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4 leading-tight">CONTÁCTANOS</h1>
+      <h3 class="text-2xl sm:text-3xl font-semibold text-blue-100 mb-6">¿Listo para trabajar con nosotros?</h3>
+      <p class="text-blue-100 mb-10 text-lg leading-relaxed">
+        Cuéntanos tu idea o proyecto. Te responderemos lo antes posible con una propuesta adecuada a tus necesidades.
       </p>
+
       <form class="space-y-6" action="/send-message" method="POST">
+        <!-- Nombre -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Nombre</label>
+          <label class="block text-sm font-medium text-white mb-2">Nombre completo</label>
           <input type="text" placeholder="Tu nombre"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            class="w-full bg-white/90 backdrop-blur-sm border border-white/30 rounded-xl px-5 py-3 text-base text-gray-800
+                   shadow-inner transition duration-300 ease-in-out
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500
+                   hover:shadow-lg hover:border-blue-300"
             required>
         </div>
+
+        <!-- Email -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Correo electrónico</label>
-          <input type="email" placeholder="tucorreo@email.com"
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+          <label class="block text-sm font-medium text-white mb-2">Correo electrónico</label>
+          <input type="email" placeholder="correo@ejemplo.com"
+            class="w-full bg-white/90 backdrop-blur-sm border border-white/30 rounded-xl px-5 py-3 text-base text-gray-800
+                   shadow-inner transition duration-300 ease-in-out
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500
+                   hover:shadow-lg hover:border-blue-300"
             required>
         </div>
+
+        <!-- Mensaje -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Mensaje</label>
+          <label class="block text-sm font-medium text-white mb-2">Mensaje</label>
           <textarea rows="5" placeholder="Escribe tu mensaje..."
-            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            class="w-full bg-white/90 backdrop-blur-sm border border-white/30 rounded-xl px-5 py-3 text-base text-gray-800
+                   shadow-inner transition duration-300 ease-in-out resize-none
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500
+                   hover:shadow-lg hover:border-blue-300"
             required></textarea>
         </div>
+
+        <!-- Botón -->
         <button type="submit"
-          class="bg-blue-800 hover:bg-blue-900 text-white font-semibold px-6 py-3 rounded-lg transition duration-300 shadow-md hover:shadow-lg">
+          class="w-full sm:w-auto bg-blue-600 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-xl
+                 transition duration-300 shadow-lg hover:shadow-xl">
           Enviar mensaje
         </button>
       </form>
     </div>
 
     <!-- Información de contacto -->
-    <div class="bg-blue-50 p-10 rounded-xl shadow-lg">
-      <h3 class="text-2xl font-bold text-blue-800 mb-6">Información de contacto</h3>
-      <ul class="space-y-6 text-gray-700 text-base">
-        <li class="flex items-start gap-4">
-          <i class="fas fa-map-marker-alt text-blue-700 mt-1"></i>
-          <span>AA.HH. Ignacio Merino MZ H L-18, Calle Las Flores, Piura</span>
-        </li>
-        <li class="flex items-start gap-4">
-          <i class="fas fa-phone-alt text-blue-700 mt-1"></i>
-          <span>+51 969 657 831</span>
-        </li>
-        <li class="flex items-start gap-4">
-          <i class="fas fa-envelope text-blue-700 mt-1"></i>
-          <span>serviciosgenerales@hotmail.com</span>
-        </li>
-        <li class="flex items-start gap-4">
-          <i class="fas fa-clock text-blue-700 mt-1"></i>
-          <span>Lunes a Sábado: 8:00 a.m. – 6:00 p.m.</span>
-        </li>
-      </ul>
+    <div class="bg-white/90 backdrop-blur-md p-10 rounded-2xl shadow-2xl border border-white/30 flex flex-col justify-between transform hover:scale-[1.02] transition duration-300">
+      <div>
+        <h3 class="text-3xl font-bold text-blue-800 mb-8 text-center lg:text-left">Información de contacto</h3>
+        <ul class="space-y-6 text-gray-700 text-base leading-relaxed">
+          <li class="flex items-start gap-4">
+            <div class="bg-blue-100 text-blue-700 p-3 rounded-full shadow">
+              <i class="fas fa-map-marker-alt text-xl"></i>
+            </div>
+            <span>
+              AA.HH. Ignacio Merino MZ H L-18<br />
+              Calle Las Flores, Piura - Perú
+            </span>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="bg-blue-100 text-blue-700 p-3 rounded-full shadow">
+              <i class="fas fa-phone-alt text-xl"></i>
+            </div>
+            <span>+51 969 657 831</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="bg-blue-100 text-blue-700 p-3 rounded-full shadow">
+              <i class="fas fa-envelope text-xl"></i>
+            </div>
+            <span>serviciosgenerales@hotmail.com</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="bg-blue-100 text-blue-700 p-3 rounded-full shadow">
+              <i class="fas fa-clock text-xl"></i>
+            </div>
+            <span>Lunes a Sábado: 8:00 a.m. – 6:00 p.m.</span>
+          </li>
+        </ul>
+      </div>
 
-      <!-- Mapa -->
-      <div class="mt-8 rounded-xl overflow-hidden border-4 border-blue-200 shadow-lg">
-        <iframe
-          class="w-full h-64"
-          src="https://www.google.com/maps?q=AA.HH.%20Ignacio%20Merino%20MZ%20H%20L-18%20Calle%20Las%20Flores,%20Piura,%20Perú&output=embed"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <!-- CTA -->
+      <div class="mt-10 text-center">
+        <p class="text-blue-900 font-semibold mb-2">¿Prefieres escribirnos directamente?</p>
+        <a href="mailto:serviciosgenerales@hotmail.com"
+          class="inline-block bg-blue-700 text-white px-6 py-2 rounded-full text-sm font-medium shadow-md hover:bg-blue-900 transition">
+          Escríbenos por correo
+        </a>
       </div>
     </div>
 
