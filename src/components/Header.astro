@@ -1,24 +1,23 @@
 ---
-
 ---
 
 <!-- Top Bar -->
-<div class="bg-blue-900 text-white text-sm px-6 py-3">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+<div class="bg-blue-900 text-white text-sm px-4 py-3">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
     <!-- Contact Info -->
-    <div class="flex items-center gap-6">
+    <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
       <span class="flex items-center gap-2">
         <i class="fas fa-envelope"></i>
-        serviciosgenerales@hotmail.com
+        <span>serviciosgenerales@hotmail.com</span>
       </span>
       <span class="flex items-center gap-2">
         <i class="fas fa-phone"></i>
-        +51 969 657 831
+        <span>+51 969 657 831</span>
       </span>
     </div>
 
     <!-- Social Media -->
-    <div class="flex gap-4 text-lg">
+    <div class="flex gap-4 text-lg mt-3 md:mt-0">
       <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-twitter"></i></a>
       <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-facebook-f"></i></a>
       <a href="#" class="hover:text-gray-300 transition"><i class="fab fa-instagram"></i></a>
@@ -27,25 +26,96 @@
 </div>
 
 <!-- Navbar -->
-<nav class="bg-blue-700 text-white px-6 py-4 shadow-md">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<nav class="bg-blue-700 text-white px-4 py-4 shadow-md ">
+  <div class="max-w-7xl mx-auto flex items-center justify-between relative">
     <!-- Logo -->
-    <a href="#">
-      <img src="./img/logo.png" alt="Logo Valdiser" class="h-16 object-contain" />
+    <a href="#" class="z-10">
+      <img
+        src="./img/logo.png"
+        alt="Logo Valdiser"
+        class="h-12 md:h-16 object-contain"
+      />
     </a>
 
-    <!-- Menú -->
-    <ul class="flex flex-wrap justify-center md:justify-start gap-6 font-semibold text-sm uppercase">
-      <li><a href="#" class="hover:text-gray-200 transition">Inicio</a></li>
-      <li><a href="#nosotros" class="hover:text-gray-200 transition">Nosotros</a></li>
-      <li><a href="#proyectos" class="hover:text-gray-200 transition">Proyectos</a></li>
-      <li><a href="#servicios" class="hover:text-gray-200 transition">Servicios</a></li>
-      <li><a href="#blog" class="hover:text-gray-200 transition">Blog</a></li>
-    </ul>
+    <!-- Botón hamburguesa (solo visible en mobile) -->
+    <button
+      id="menu-toggle"
+      class="md:hidden text-white text-2xl focus:outline-none z-10"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
 
-    <!-- Botón -->
-    <a href="#contacto" class="bg-white text-blue-700 font-semibold px-5 py-2 rounded hover:bg-gray-100 transition">
+    <!-- Menú desktop (centrado horizontalmente) -->
+    <div
+      class="hidden md:flex items-center justify-center absolute inset-0 pointer-events-none"
+    >
+      <ul
+        class="flex gap-6 font-semibold text-sm uppercase pointer-events-auto"
+      >
+        <li><a href="#" class="hover:text-gray-200 transition">Inicio</a></li>
+        <li>
+          <a href="#nosotros" class="hover:text-gray-200 transition">Nosotros</a
+          >
+        </li>
+        <li>
+          <a href="#proyectos" class="hover:text-gray-200 transition"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a href="#servicios" class="hover:text-gray-200 transition"
+            >Servicios</a
+          >
+        </li>
+        <li><a href="#blog" class="hover:text-gray-200 transition">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Botón "Contáctanos" en desktop -->
+    <div class="hidden md:block z-10">
+      <a
+        href="#contacto"
+        class="bg-white text-blue-700 font-semibold px-5 py-2 rounded hover:bg-gray-100 transition"
+      >
+        Contáctanos
+      </a>
+    </div>
+  </div>
+
+  <!-- Menú mobile -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden mt-4 flex flex-col items-center gap-4 text-sm font-semibold uppercase"
+  >
+    <a href="#" class="hover:text-gray-200 transition">Inicio</a>
+    <a href="#nosotros" class="hover:text-gray-200 transition">Nosotros</a>
+    <a href="#proyectos" class="hover:text-gray-200 transition">Proyectos</a>
+    <a href="#servicios" class="hover:text-gray-200 transition">Servicios</a>
+    <a href="#blog" class="hover:text-gray-200 transition">Blog</a>
+    <a
+      href="#contacto"
+      class="bg-white text-blue-700 px-5 py-2 rounded hover:bg-gray-100 transition"
+    >
       Contáctanos
     </a>
   </div>
 </nav>
+
+<!-- Script para el menú hamburguesa -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("mobile-menu");
+
+    toggle?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+    });
+
+    // Cierra el menú cuando se selecciona un enlace
+    menu?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+      });
+    });
+  });
+</script>
