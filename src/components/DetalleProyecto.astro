@@ -1,0 +1,85 @@
+---
+import ListaProyectos from "./ListaProyectos.astro";
+---
+
+<!-- COMPONENTE DETALLE PROYECTO - INSTALACIÓN DE DRYWALL -->
+<div class="bg-gray-100 text-gray-800 py-16 px-6 lg:px-20 max-w-7xl mx-auto">
+
+  <!-- Encabezado -->
+  <header class="mb-12 text-center">
+    <h2 class="text-4xl font-extrabold text-blue-900 mb-4">Instalación de Drywall</h2>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+      Proyecto desarrollado para optimizar la distribución y acondicionamiento acústico-térmico de oficinas administrativas
+      dentro de una operación minera en el norte del país.
+    </p>
+  </header>
+
+  <!-- Imágenes comparativas -->
+  <section class="grid md:grid-cols-2 gap-8 mb-16">
+    <!-- Imagen Antes -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img src="./img/drywall.jpg" alt="Antes" class="w-full h-64 object-cover" />
+      <div class="p-4 text-center text-sm text-gray-600">Estado del ambiente antes de la intervención</div>
+    </div>
+
+    <!-- Imagen Después -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+      <img src="./img/drywall.jpg" alt="Después" class="w-full h-64 object-cover" />
+      <div class="p-4 text-center text-sm text-gray-600">Ambiente remodelado con sistema Drywall terminado</div>
+    </div>
+  </section>
+
+  <!-- Descripción y Ficha técnica -->
+  <section class="grid md:grid-cols-2 gap-10 mb-16">
+
+    <!-- Descripción -->
+    <div>
+      <h3 class="text-2xl font-bold text-blue-800 mb-4">Descripción del proyecto</h3>
+      <p class="text-gray-700 leading-relaxed">
+        Se implementó un sistema Drywall con estructuras metálicas galvanizadas y placas de yeso resistentes a la humedad
+        para la creación de divisiones internas y techos falsos. Este sistema permitió generar ambientes cómodos, eficientes
+        y adaptables en un entorno de operación minera. Se redujo el tiempo de ejecución respecto a soluciones tradicionales
+        y se mejoró la climatización interior.
+      </p>
+    </div>
+
+    <!-- Ficha Técnica -->
+    <div>
+      <h3 class="text-2xl font-bold text-blue-800 mb-4">Ficha técnica</h3>
+      <div class="bg-white shadow-md rounded-lg p-6 text-gray-700 space-y-3">
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-medium">Ubicación:</span>
+          <span>Piura, Perú</span>
+        </div>
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-medium">Área intervenida:</span>
+          <span>250 m²</span>
+        </div>
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-medium">Duración:</span>
+          <span>3 semanas</span>
+        </div>
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-medium">Tipo de material:</span>
+          <span>Drywall RH (resistente a humedad)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium">Equipo técnico:</span>
+          <span>6 especialistas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Botones de acción -->
+  <div class="text-center">
+    <a href="/proyectos" class="inline-block bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition mr-4">
+      ← Ver todos los proyectos
+    </a>
+    <a href="/contacto" class="inline-block bg-white border border-blue-700 text-blue-700 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition">
+      Cotizar un proyecto similar
+    </a>
+  </div>
+</div>
+
+<ListaProyectos />

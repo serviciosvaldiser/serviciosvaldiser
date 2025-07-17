@@ -1,0 +1,149 @@
+---
+  const cards = [
+  {
+    title: "Limpieza de Oficinas",
+    image: "./img/drywall.jpg",
+    description: "Servicio profesional de limpieza diaria para oficinas y espacios corporativos.",
+    link: "#",
+  },
+  {
+    title: "Mantenimiento Eléctrico",
+    image: "/img2.jpg",
+    description: "Revisión y reparación de instalaciones eléctricas residenciales e industriales.",
+    link: "#",
+  },
+  {
+    title: "Jardinería y Paisajismo",
+    image: "/img3.jpg",
+    description: "Diseño y mantenimiento de áreas verdes para empresas y viviendas.",
+    link: "#",
+  },
+  {
+    title: "Plomería",
+    image: "/img4.jpg",
+    description: "Instalación y reparación de redes de agua y desagüe, con atención inmediata.",
+    link: "#",
+  },
+  {
+    title: "Pintura de Interiores",
+    image: "/img5.jpg",
+    description: "Acabados profesionales para oficinas, casas y locales comerciales.",
+    link: "#",
+  },
+  {
+    title: "Limpieza Industrial",
+    image: "/img6.jpg",
+    description: "Limpieza profunda para fábricas, almacenes y talleres industriales.",
+    link: "#",
+  },
+  {
+    title: "Fumigación y Control de Plagas",
+    image: "/img7.jpg",
+    description: "Eliminación de insectos y roedores con productos certificados.",
+    link: "#",
+  },
+  {
+    title: "Reparación de Techos",
+    image: "/img8.jpg",
+    description: "Servicios de impermeabilización y reparación de filtraciones.",
+    link: "#",
+  },
+  {
+    title: "Limpieza de Alfombras",
+    image: "/img9.jpg",
+    description: "Limpieza especializada para alfombras, tapices y mobiliario.",
+    link: "#",
+  },
+  {
+    title: "Mantenimiento de Aire Acondicionado",
+    image: "/img10.jpg",
+    description: "Revisión, limpieza y carga de gas para sistemas de climatización.",
+    link: "#",
+  },
+  {
+    title: "Instalación de Cámaras de Seguridad",
+    image: "/img11.jpg",
+    description: "Montaje y configuración de sistemas de videovigilancia modernos.",
+    link: "#",
+  },
+  {
+    title: "Traslados y Mudanzas",
+    image: "/img12.jpg",
+    description: "Servicio completo de embalaje, carga y transporte para empresas y hogares.",
+    link: "#",
+  },
+];
+
+---
+
+
+  <div class="bg-gray-100 text-gray-800 p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">Proyectos</h1>
+
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {cards.map((card) => (
+        <div class="card bg-white rounded-2xl shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+          <div class="relative group">
+            <img
+              src={card.image}
+              alt={card.title}
+              class="w-full h-48 object-cover transition duration-300 group-hover:brightness-90"
+            />
+          </div>
+          <div class="p-6 flex flex-col justify-between h-52">
+            <div>
+              <h2 class="text-xl font-semibold text-gray-800 mb-2">{card.title}</h2>
+              <p class="text-gray-600 text-sm">{card.description}</p>
+            </div>
+            <div class="mt-4">
+              <a
+                href={card.link}
+                class="inline-block px-4 py-2 rounded-full text-white text-sm font-medium bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition"
+              >
+                Ver Proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Navegación de paginación -->
+    <div class="flex justify-center items-center mt-8 gap-4">
+      <button id="prev" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Anterior</button>
+      <span id="page-number" class="text-lg font-semibold">1</span>
+      <button id="next" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Siguiente</button>
+    </div>
+  </div>
+
+   <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = [...document.querySelectorAll(".card")];
+        const perPage = 6;
+        let currentPage = 1;
+        const totalPages = Math.ceil(cards.length / perPage);
+
+        function showPage(page) {
+          cards.forEach((card, i) => {
+            card.style.display = i >= (page - 1) * perPage && i < page * perPage ? "block" : "none";
+          });
+          document.getElementById("page-number").textContent = page;
+        }
+
+        document.getElementById("prev").addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+          }
+        });
+
+        document.getElementById("next").addEventListener("click", () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+          }
+        });
+
+        showPage(currentPage);
+      });
+    </script>
