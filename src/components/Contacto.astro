@@ -10,7 +10,7 @@
         Cuéntanos tu idea o proyecto. Te responderemos lo antes posible con una propuesta adecuada a tus necesidades.
       </p>
 
-      <form class="space-y-6" action="/send-message" method="POST">
+      <form id="form" class="space-y-6" action="https://formspree.io/f/xjkoollq" method="POST">
         <!-- Nombre -->
         <div>
           <label class="block text-sm font-medium text-white mb-2">Nombre completo</label>
@@ -36,7 +36,7 @@
         <!-- Mensaje -->
         <div>
           <label class="block text-sm font-medium text-white mb-2">Mensaje</label>
-          <textarea rows="5" placeholder="Escribe tu mensaje..."
+          <textarea name="message" rows="5" placeholder="Escribe tu mensaje..."
             class="w-full bg-white/90 backdrop-blur-sm border border-white/30 rounded-xl px-5 py-3 text-base text-gray-800
                    shadow-inner transition duration-300 ease-in-out resize-none
                    focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500
@@ -100,3 +100,29 @@
 
   </div>
 </section>
+
+<script>
+  const $form = document.querySelector('#form');
+  if ($form) {
+    $form.addEventListener('submit', handlesubmit);
+  }
+   
+  async function handlesubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+    if (response.ok) {
+      alert('Gracias por tu mensaje. Nos pondremos en contacto pronto.');
+      form.reset();
+    } else {
+      alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.');
+    }
+  }
+</script>
